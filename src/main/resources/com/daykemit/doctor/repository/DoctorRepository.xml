@@ -17,7 +17,7 @@
         </collection>
     </resultMap>
 
-    <select id="findById" resultMap="doctorResultMap">
+    <sql id="baseQuery">
         SELECT d.id, d.full_name, d.experience_years, d.work_location,
         GROUP_CONCAT(distinct dg.degree_name) AS degree_name,
         GROUP_CONCAT(distinct s.specialization_name) AS specialization_name
@@ -26,7 +26,16 @@
         LEFT JOIN degrees dg ON dd.degree_id = dg.id
         LEFT JOIN doctor_specializations ds ON d.id = ds.doctor_id
         LEFT JOIN specializations s ON ds.specialization_id = s.id
+    </sql>
+
+    <select id="findById" resultMap="doctorResultMap">
+        <include refid="baseQuery"/>
         WHERE d.id = #{id}
+        GROUP BY d.id
+    </select>
+
+    <select id="findAll" resultMap="doctorResultMap">
+        <include refid="baseQuery"/>
         GROUP BY d.id
     </select>
 
