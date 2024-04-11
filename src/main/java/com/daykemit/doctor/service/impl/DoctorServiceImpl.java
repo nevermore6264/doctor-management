@@ -13,7 +13,6 @@ import com.daykemit.doctor.utils.Constants;
 import com.daykemit.doctor.utils.Response;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.BeanUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
@@ -62,19 +61,13 @@ public class DoctorServiceImpl implements IDoctorService {
      * @return Response
      */
     public Response findAll(HttpServletRequest httpServletRequest, DoctorRequest request) {
-        List<DoctorEntity> conversationEntities = repository.findAll();
-        return Response.success(Constants.RESPONSE_CODE.SUCCESS, "Tìm kiếm dữ liệu thành công").withData(conversationEntities);
+        List<DoctorEntity> entities = repository.findAll();
+        return Response.success(
+                Constants.RESPONSE_CODE.SUCCESS,
+                "Tìm kiếm dữ liệu thành công"
+        ).withData(entities);
     }
 
-    private Response validateBeforeGetPages(Integer pageIndex, Integer pageSize) {
-        if (pageIndex == null || pageIndex < 1) {
-            return Response.error(Constants.RESPONSE_CODE.ERROR, "Vui lòng nhập số trang lớn hơn 0");
-        }
-        if (pageSize == null || pageSize < 1) {
-            return Response.error(Constants.RESPONSE_CODE.ERROR, "Vui lòng nhập số phần tử trên trang lớn hơn 0");
-        }
-        return null;
-    }
 //
 //    @Override
 //    public Response getPages(HttpServletRequest httpServletRequest, DoctorRequest request) {
