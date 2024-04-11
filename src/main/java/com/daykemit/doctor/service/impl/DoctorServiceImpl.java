@@ -47,9 +47,6 @@ public class DoctorServiceImpl implements IDoctorService {
         if (entity == null) {
             return Response.warning(Constants.RESPONSE_CODE.NO_RECORD, "Không tìm thấy bản ghi");
         }
-        if (entity.getIsDeleted().equals(Constants.IS_DELETED.YES)) {
-            return Response.warning(Constants.RESPONSE_CODE.RECORD_DELETED, "Bản ghi đã bị xóa");
-        }
 
         DoctorResponse response = mapToDTO(entity);
         return Response.success(

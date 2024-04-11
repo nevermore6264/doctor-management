@@ -18,16 +18,4 @@ import java.util.Date;
 @NoArgsConstructor
 public class BaseResponse {
 
-    private String createdBy;
-
-    private String updatedBy;
-
-    private Boolean isDeleted;
-
-    private Date createdTime;
-
-    private Date updatedTime;
-
-    private String uuid;
-
 }

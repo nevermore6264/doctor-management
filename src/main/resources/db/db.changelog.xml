@@ -11,4 +11,8 @@
     <include file="ddl/create_ddl_degrees.xml" relativeToChangelogFile="true"/>
     <!--  End: Liquibase for create table  -->
 
+    <!--  Start: Liquibase for insert table  -->
+    <include file="dml/insert_dml_doctor.xml" relativeToChangelogFile="true"/>
+    <!--  End: Liquibase for insert table  -->
+
 </databaseChangeLog>

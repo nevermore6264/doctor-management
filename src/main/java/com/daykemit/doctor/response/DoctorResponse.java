@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 /**
  * DoctorResponse for table "conversation"
  *
@@ -18,8 +20,15 @@ import lombok.Setter;
 @AllArgsConstructor
 public class DoctorResponse extends BaseResponse {
 
-    private Long id;
+    private int id;
 
-    private String title;
+    private String fullName;
 
+    private int experienceYears;
+
+    private String workLocation;
+
+    private List<String> degrees;
+
+    private List<String> specializations;
 }

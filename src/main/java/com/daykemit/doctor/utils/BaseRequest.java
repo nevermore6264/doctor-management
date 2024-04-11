@@ -16,21 +16,5 @@ import java.util.Date;
 @Setter
 @NoArgsConstructor
 public class BaseRequest {
-    private String createdBy;
 
-    private String updatedBy;
-
-    private Boolean isDeleted;
-
-    private Date createdTime;
-
-    private Date updatedTime;
-
-    private Integer page;
-
-    private Integer recordPage;
-
-    private String sorting;
-
-    private String uuid;
 }
