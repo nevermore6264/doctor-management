@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+            http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd
+            http://www.liquibase.org/xml/ns/dbchangelog-ext
+            http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <changeSet author="HieuTT" id="3">
+        <sql>
+            <![CDATA[
+                CREATE TABLE degrees (
+                    degree_id INT AUTO_INCREMENT PRIMARY KEY,
+                    degree_name VARCHAR(100) NOT NULL
+                );
+
+                CREATE TABLE doctor_degrees (
+                    doctor_id INT,
+                    degree_id INT,
+                    PRIMARY KEY (doctor_id, degree_id),
+                    FOREIGN KEY (doctor_id) REFERENCES Doctors(doctor_id),
+                    FOREIGN KEY (degree_id) REFERENCES Degrees(degree_id)
+                );
+            ]]>
+        </sql>
+    </changeSet>
+</databaseChangeLog>
