@@ -1,0 +1,33 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.daykemit.doctor.repository.DoctorRepository">
+
+    <resultMap id="doctorResultMap" type="com.daykemit.doctor.entity.DoctorEntity">
+        <id property="id" column="id"/>
+        <result property="fullName" column="full_name"/>
+        <result property="experienceYears" column="experience_years"/>
+        <result property="workLocation" column="work_location"/>
+        <collection property="degrees" ofType="java.lang.String">
+            <result column="degree_name"/>
+        </collection>
+        <collection property="specializations" ofType="java.lang.String">
+            <result column="specialization_name"/>
+        </collection>
+    </resultMap>
+
+    <select id="findById" resultMap="doctorResultMap">
+        SELECT d.id, d.full_name, d.experience_years, d.work_location,
+        GROUP_CONCAT(distinct dg.degree_name) AS degree_name,
+        GROUP_CONCAT(distinct s.specialization_name) AS specialization_name
+        FROM doctors d
+        LEFT JOIN doctor_degrees dd ON d.id = dd.doctor_id
+        LEFT JOIN degrees dg ON dd.degree_id = dg.degree_id
+        LEFT JOIN doctor_specializations ds ON d.id = ds.doctor_id
+        LEFT JOIN specializations s ON ds.specialization_id = s.specialization_id
+        WHERE d.id = #{id}
+        GROUP BY d.id
+    </select>
+
+</mapper>

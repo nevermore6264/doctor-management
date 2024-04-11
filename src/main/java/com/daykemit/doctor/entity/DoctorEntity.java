@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 /**
  * Doctor class
  *
@@ -18,12 +20,16 @@ import lombok.Setter;
 @AllArgsConstructor
 public class DoctorEntity extends BaseEntity {
 
-    private Long id;
+    private int id;
 
-    private Long accountId;
+    private String fullName;
 
-    private String uuid;
+    private int experienceYears;
 
-    private String title;
+    private String workLocation;
+
+    private List<String> degrees;
+
+    private List<String> specializations;
 
 }

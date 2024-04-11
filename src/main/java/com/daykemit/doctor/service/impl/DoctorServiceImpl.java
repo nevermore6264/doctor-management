@@ -14,6 +14,7 @@ import com.daykemit.doctor.utils.Response;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -26,10 +27,14 @@ import java.util.List;
  * @since 09/05/2023
  */
 @Service
+@Primary
 public class DoctorServiceImpl implements IDoctorService {
 
-    @Autowired
     private DoctorRepository repository;
+
+    public DoctorServiceImpl(DoctorRepository repository) {
+        this.repository = repository;
+    }
 
     /**
      * findById
