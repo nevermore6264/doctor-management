@@ -19,10 +19,10 @@ public interface IDoctorService {
     /**
      * findById
      *
-     * @param conversationId Long
+     * @param id Long
      * @return Response
      */
-    Response findById(Long conversationId);
+    Response findById(Long id);
 
     /**
      * findAll

@@ -23,9 +23,9 @@
         GROUP_CONCAT(distinct s.specialization_name) AS specialization_name
         FROM doctors d
         LEFT JOIN doctor_degrees dd ON d.id = dd.doctor_id
-        LEFT JOIN degrees dg ON dd.degree_id = dg.degree_id
+        LEFT JOIN degrees dg ON dd.degree_id = dg.id
         LEFT JOIN doctor_specializations ds ON d.id = ds.doctor_id
-        LEFT JOIN specializations s ON ds.specialization_id = s.specialization_id
+        LEFT JOIN specializations s ON ds.specialization_id = s.id
         WHERE d.id = #{id}
         GROUP BY d.id
     </select>

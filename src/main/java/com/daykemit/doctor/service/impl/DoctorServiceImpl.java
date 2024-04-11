@@ -39,11 +39,11 @@ public class DoctorServiceImpl implements IDoctorService {
     /**
      * findById
      *
-     * @param conversationId Long
+     * @param id Long
      * @return Response
      */
-    public Response findById(Long conversationId) {
-        DoctorEntity entity = repository.findById(conversationId).orElse(null);
+    public Response findById(Long id) {
+        DoctorEntity entity = repository.findById(id).orElse(null);
         if (entity == null) {
             return Response.warning(Constants.RESPONSE_CODE.NO_RECORD, "Không tìm thấy bản ghi");
         }
