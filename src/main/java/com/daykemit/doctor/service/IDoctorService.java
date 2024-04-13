@@ -1,7 +1,3 @@
-/*
- * Copyright © 2021 VMO JSC. All rights reserved. Use is subject to license terms.
- *
- */
 package com.daykemit.doctor.service;
 
 import com.daykemit.doctor.request.DoctorRequest;

@@ -8,7 +8,7 @@ import lombok.Setter;
 /**
  * Response class
  *
- * @author VMO
+ * @author HieuTT
  * @version 1.0
  * @since 06/01/2023
  */

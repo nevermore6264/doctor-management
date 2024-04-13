@@ -9,7 +9,7 @@ import java.util.Date;
 /**
  * BaseResponse class
  *
- * @author VMO
+ * @author HieuTT
  * @version 1.0
  * @since 06/01/2022
  */

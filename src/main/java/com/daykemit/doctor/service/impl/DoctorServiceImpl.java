@@ -1,7 +1,3 @@
-/*
- * Copyright © 2021 VMO JSC. All rights reserved. Use is subject to license terms.
- *
- */
 package com.daykemit.doctor.service.impl;
 
 import com.daykemit.doctor.entity.DoctorEntity;
@@ -23,7 +19,7 @@ import java.util.stream.Collectors;
 /**
  * DoctorServiceImpl class
  *
- * @author VMO
+ * @author HieuTT
  * @version 1.0
  * @since 09/05/2023
  */

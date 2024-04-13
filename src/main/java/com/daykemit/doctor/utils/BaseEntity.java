@@ -9,7 +9,7 @@ import java.util.Date;
 /**
  * BaseEntity
  *
- * @author VMO
+ * @author HieuTT
  * @version 1.0
  */
 @Setter
