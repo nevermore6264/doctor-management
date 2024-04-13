@@ -1,6 +1,7 @@
 package com.daykemit.doctor.repository;
 
 import com.daykemit.doctor.entity.DoctorEntity;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -20,5 +21,12 @@ public interface DoctorRepository {
     List<DoctorEntity> findAll();
 
     Optional<DoctorEntity> findById(Long id);
+
+    List<DoctorEntity> getDoctors(
+            @Param("offset") int offset,
+            @Param("pageSize") int pageSize
+    );
+
+    long countDoctors();
 
 }

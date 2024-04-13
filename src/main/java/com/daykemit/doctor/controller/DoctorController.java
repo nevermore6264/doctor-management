@@ -55,18 +55,18 @@ public class DoctorController extends BaseController {
         return service.findAll(httpServletRequest, request);
     }
 
-//    /**
-//     * search
-//     *
-//     * @param request ConversationRequest
-//     * @return Response
-//     */
-//    @Operation(
-//            summary = "Conversation: API để lấy danh sách bác sĩ phân trang và lọc"
-//    )
-//    @PostMapping(path = "/search")
-//    public Response processSearch(HttpServletRequest httpServletRequest, @RequestBody DoctorRequest request) {
-//        return service.getPages(httpServletRequest, request);
-//    }
+    /**
+     * search
+     *
+     * @param request ConversationRequest
+     * @return Response
+     */
+    @Operation(
+            summary = "Conversation: API để lấy danh sách bác sĩ phân trang và lọc"
+    )
+    @PostMapping(path = "/search")
+    public Response processSearch(HttpServletRequest httpServletRequest, @RequestBody DoctorRequest request) {
+        return service.getPages(httpServletRequest, request);
+    }
 
 }

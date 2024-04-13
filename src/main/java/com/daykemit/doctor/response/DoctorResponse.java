@@ -31,4 +31,5 @@ public class DoctorResponse extends BaseResponse {
     private List<String> degrees;
 
     private List<String> specializations;
+
 }

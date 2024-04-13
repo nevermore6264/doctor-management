@@ -32,11 +32,11 @@ public interface IDoctorService {
      */
     Response findAll(HttpServletRequest httpServletRequest, DoctorRequest request);
 
-//    /**
-//     * getPages
-//     *
-//     * @param request DoctorRequest
-//     * @return Response
-//     */
-//    Response getPages(HttpServletRequest httpServletRequest, DoctorRequest request);
+    /**
+     * getPages
+     *
+     * @param request DoctorRequest
+     * @return Response
+     */
+    Response getPages(HttpServletRequest httpServletRequest, DoctorRequest request);
 }

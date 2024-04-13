@@ -17,9 +17,11 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class DoctorRequest extends BaseRequest {
+
     private Long id;
-    private String title;
+
     private Integer pageIndex;
+
     private Integer pageSize;
-    private String email;
+
 }
